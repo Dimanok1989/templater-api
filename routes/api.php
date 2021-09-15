@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 /** Регистрация нового пользователя */
 Route::post('registration', 'Users\Authorization@registration');
 
@@ -30,6 +26,7 @@ Route::middleware('auth:sanctum')->group(function() {
     /** Выход пользователя и отзыв токена */
     Route::post('logout', 'Users\Authorization@logout');
 
+    /** Данные пользователя */
     Route::post('user', function (Request $request) {
         return $request->user();
     });
