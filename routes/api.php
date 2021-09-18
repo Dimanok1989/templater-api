@@ -27,8 +27,6 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::post('logout', 'Users\Authorization@logout');
 
     /** Данные пользователя */
-    Route::post('user', function (Request $request) {
-        return $request->user();
-    });
+    Route::post('user', 'Users\UserData@user');
 
 });

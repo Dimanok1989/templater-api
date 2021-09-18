@@ -53,7 +53,7 @@ class Authorization extends Controller
         $token = $user->createToken(Authorization::getDevice($request))->plainTextToken;
 
         return response()->json([
-            'user' => $user,
+            'user' => UserData::getUserData($user),
             'token' => $token,
         ]);
 
